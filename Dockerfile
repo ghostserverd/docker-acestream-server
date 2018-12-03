@@ -11,6 +11,7 @@ RUN apt-get update && apt-get upgrade --yes && \
 		python-apsw \
 		python-lxml \
 		python-m2crypto \
+		python-setuptools \
 		python-pkg-resources && \
 	apt-get clean && \
 	rm --force --recursive /var/lib/apt/lists && \
