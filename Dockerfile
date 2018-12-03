@@ -4,11 +4,14 @@ LABEL maintainer="Peter Mescalchin <peter@magnetikonline.com>"
 ENV VERSION="3.1.16_debian_8.7"
 
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list.d/sources.list && \
+    echo "deb http://www.deb-multimedia.org jessie main" >> /etc/apt/sources.list.d/sources.list && \
+    apt-get update && apt-get install --no-install-recommends --yes --force-yes deb-multimedia-keyring && \
     apt-get update && apt-get upgrade --yes && \
 	apt-get install --no-install-recommends --yes \
 		curl \
 		libpython2.7 \
 		net-tools \
+                libswresample1 \
 		python-apsw \
 		python-lxml \
 		python-m2crypto \
